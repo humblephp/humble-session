@@ -1,0 +1,17 @@
+{
+    "name": "humble/session",
+    "description": "HUMBLE Session",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0.0",
+        "humble/standards": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Humble\\Session\\": "./src"
+        }
+    }
+}

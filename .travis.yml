@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 7.0
+  - nightly
+
+env:
+  - APP_ENV=travis
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source
+
+script:
+  - ./vendor/bin/phpcs ./src --extensions=php --standard=./vendor/humble/standards/ruleset/phpcs.xml
+  - ./vendor/bin/phpmd ./src text ./vendor/humble/standards/ruleset/phpmd.xml
+  - ./vendor/bin/phpunit --coverage-text
